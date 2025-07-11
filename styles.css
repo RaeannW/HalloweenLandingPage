@@ -18,6 +18,24 @@ main {
   border: solid black 4px;
   box-shadow: -10px 10px 10px rgba(0, 0, 0, 0.381);
 }
+nav {
+  background-color: orange;
+  display: flex;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  justify-content: center;
+  align-items: center;
+  height: 4rem;
+}
+nav ul {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+}
+nav li {
+  margin-right: 20px;
+}
+
 .tabs {
   display: flex;
   flex-direction: row;
@@ -28,8 +46,8 @@ main {
   margin: 0 auto;
   border-radius: 30px;
 }
- .topHalf {
-  background-image: url('stars.png');
+.topHalf {
+  background-image: url("stars.png");
   background-size: cover;
   background-position: center;
   position: relative;

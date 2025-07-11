@@ -1,3 +1,4 @@
+// Move the eyes on girl to follow mouse
 document.addEventListener("mousemove", (e) => {
   const mouseX = e.clientX;
   const mouseY = e.clientY;
@@ -23,3 +24,8 @@ function angle(cx, cy, ex, ey) {
   const deg = (rad * 180) / Math.PI;
   return deg;
 }
+
+// add and delete recipes
+const practice = document.getElementById('latestRecipes');
+practice.append("Latest Recipes");
+
