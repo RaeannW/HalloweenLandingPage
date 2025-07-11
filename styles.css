@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Creepster&display=swap");
+
+body {
+  background-color: #ffdaba;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+}
+.mainWindow {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  height: 900px;
+  background-color: #ffebd9;
+  border-radius: 30px;
+  border: solid black 4px;
+  box-shadow: -10px 10px 10px rgba(0, 0, 0, 0.381);
+}
+.tabs {
+  display: flex;
+  flex-direction: row;
+  background-color: black;
+  width: 80%;
+  height: 60px;
+  place-items: center;
+  margin: 0 auto;
+  border-radius: 30px;
+}
+ .topHalf {
+  background-image: url('stars.png');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+}
+.topHalf::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: #ffebd9cc;
+  z-index: 0;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+}
+.topHalf > * {
+  position: relative;
+  z-index: 1;
+}
+.mainWindowText {
+  text-align: center;
+  align-items: center;
+}
+.character-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  padding-top: 50px;
+}
+.character img {
+  width: 100%;
+  display: block;
+}
+
+.eye {
+  position: absolute;
+  top: 55%;
+}
+
+#eyeLeft {
+  width: 7%;
+  left: 56%;
+}
+
+#eyeRight {
+  width: 7%;
+  left: 34%;
+}
+svg {
+  text-align: center;
+  color: white;
+}
+path {
+  fill: transparent;
+}
+text {
+  fill: black;
+  stroke: black;
+  stroke-width: 0.5px;
+  font-size: 50px;
+  font-family: "Creepster", cursive;
+}
+textPath {
+  opacity: 0;
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+  animation: animateText 5s ease-in-out infinite;
+  animation-delay: 0s;
+}
+@keyframes animateText {
+  0% {
+    opacity: 100%;
+    stroke-dashoffset: 400;
+    fill: none;
+  }
+  50% {
+    fill: #839c17;
+  }
+  100% {
+    opacity: 100%;
+    stroke-dashoffset: 0;
+    fill: darkorange;
+  }
+}
