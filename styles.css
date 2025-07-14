@@ -1,7 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Creepster&display=swap");
 
+:root {
+  --dark-purple: #d8a7fe;
+  --dark-black: #0c080a;
+  --dark-orange: #f0801e;
+  --med-gray: #626161;
+  --light-orange: #ffc999;
+  --light-purple: #ede0f7;
+  --pale-orange: #FFF0DC;
+  --white: #ffffff;
+}
+
 body {
-  background-color: #ffdaba;
+  background-color: var(--light-purple);
 }
 main {
   display: flex;
@@ -13,24 +24,23 @@ main {
   flex-direction: column;
   width: 70%;
   height: 900px;
-  background-color: #ffebd9;
+  background-color: var(--pale-orange);
   border-radius: 30px;
-  border: solid black 4px;
+  border: solid var(--dark-black) 4px;
   box-shadow: -10px 10px 10px rgba(0, 0, 0, 0.381);
 }
 nav {
-  background-color: orange;
+  background-color: var(--dark-orange);
   display: flex;
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
-  justify-content: center;
-  align-items: center;
   height: 4rem;
 }
 nav ul {
   display: flex;
   flex-direction: row;
   list-style: none;
+
 }
 nav li {
   margin-right: 20px;
@@ -39,7 +49,7 @@ nav li {
 .tabs {
   display: flex;
   flex-direction: row;
-  background-color: black;
+  background-color: var(--dark-black);
   width: 80%;
   height: 60px;
   place-items: center;
@@ -47,7 +57,8 @@ nav li {
   border-radius: 30px;
 }
 .topHalf {
-  background-image: url("stars.png");
+  /* come back to backgroumd image later to update */
+  /* background-image: url("stars.png"); */
   background-size: cover;
   background-position: center;
   position: relative;
@@ -60,7 +71,8 @@ nav li {
   content: "";
   position: absolute;
   inset: 0;
-  background-color: #ffebd9cc;
+  background-color: var(--pale-orange);
+  opacity: 60%;
   z-index: 0;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
@@ -101,14 +113,14 @@ nav li {
 }
 svg {
   text-align: center;
-  color: white;
+  color: var(--white);
 }
 path {
   fill: transparent;
 }
 text {
-  fill: black;
-  stroke: black;
+  fill: var(--dark-black);
+  stroke: var(--dark-black);
   stroke-width: 0.5px;
   font-size: 50px;
   font-family: "Creepster", cursive;
@@ -127,11 +139,33 @@ textPath {
     fill: none;
   }
   50% {
-    fill: #839c17;
+    fill: var(--dark-purple);
   }
   100% {
     opacity: 100%;
     stroke-dashoffset: 0;
-    fill: darkorange;
+    fill: var(--dark-orange);
+  }
+}
+
+.fa-bars {
+  align-content: center;
+  margin-left: 20px;
+}
+
+@media (min-width: 550px) {
+  nav > .fa-bars {
+    display: none;
+  }
+}
+@media (min-width: 550px) {
+  nav {
+  justify-content: center;
+  align-items: center;
+  }
+}
+@media (max-width: 550px) {
+  .hidden--mobile {
+    display: none;
   }
 }
