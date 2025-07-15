@@ -1,3 +1,15 @@
+import * as components from "./components";
+
+function render() {
+  document.querySelector("#root").innerHTML = `
+      ${header()}
+      ${nav()}
+      ${footer()}
+    `;
+}
+
+render();
+
 // Move the eyes on girl to follow mouse
 document.addEventListener("mousemove", (e) => {
   const mouseX = e.clientX;
