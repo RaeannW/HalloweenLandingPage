@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Creepster&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 :root {
   --dark-purple: #d8a7fe;
@@ -7,8 +8,10 @@
   --med-gray: #626161;
   --light-orange: #ffc999;
   --light-purple: #ede0f7;
-  --pale-orange: #FFF0DC;
+  --pale-orange: #fff0dc;
   --white: #ffffff;
+
+  --main-border: solid var(--dark-black) 3.5px;
 }
 
 body {
@@ -26,24 +29,26 @@ main {
   height: 900px;
   background-color: var(--pale-orange);
   border-radius: 30px;
-  border: solid var(--dark-black) 4px;
+  border: var(--main-border);
   box-shadow: -10px 10px 10px rgba(0, 0, 0, 0.381);
 }
 nav {
   background-color: var(--dark-orange);
   display: flex;
-  border-top-left-radius: 25px;
-  border-top-right-radius: 25px;
+  border-top-left-radius: 26px;
+  border-top-right-radius: 26px;
   height: 4rem;
+  border-bottom: var(--main-border);
 }
 nav ul {
   display: flex;
   flex-direction: row;
   list-style: none;
-
 }
 nav li {
   margin-right: 20px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
 }
 
 .tabs {
@@ -57,25 +62,22 @@ nav li {
   border-radius: 30px;
 }
 .topHalf {
-  /* come back to backgroumd image later to update */
-  /* background-image: url("stars.png"); */
-  background-size: cover;
-  background-position: center;
+  background-image: url("cloudBackground.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: top center;
   position: relative;
   display: flex;
   flex-direction: column;
-  border-top-left-radius: 30px;
-  border-top-right-radius: 30px;
+  padding-top: 4rem;
 }
 .topHalf::after {
   content: "";
   position: absolute;
   inset: 0;
   background-color: var(--pale-orange);
-  opacity: 60%;
+  opacity: 40%;
   z-index: 0;
-  border-top-left-radius: 30px;
-  border-top-right-radius: 30px;
 }
 .topHalf > * {
   position: relative;
@@ -122,8 +124,8 @@ text {
   fill: var(--dark-black);
   stroke: var(--dark-black);
   stroke-width: 0.5px;
-  font-size: 50px;
-  font-family: "Creepster", cursive;
+  font-size: 40px;
+  font-family: "Pacifico", cursive;
 }
 textPath {
   opacity: 0;
@@ -136,10 +138,7 @@ textPath {
   0% {
     opacity: 100%;
     stroke-dashoffset: 400;
-    fill: none;
-  }
-  50% {
-    fill: var(--dark-purple);
+    fill: var(--light-orange);
   }
   100% {
     opacity: 100%;
@@ -160,8 +159,8 @@ textPath {
 }
 @media (min-width: 550px) {
   nav {
-  justify-content: center;
-  align-items: center;
+    justify-content: center;
+    align-items: center;
   }
 }
 @media (max-width: 550px) {
