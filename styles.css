@@ -12,6 +12,8 @@
   --white: #ffffff;
 
   --main-border: solid var(--dark-black) 3.5px;
+  --main-shadow: -10px 10px 10px rgba(0, 0, 0, 0.381);
+
 }
 
 body {
@@ -30,7 +32,7 @@ main {
   background-color: var(--pale-orange);
   border-radius: 30px;
   border: var(--main-border);
-  box-shadow: -10px 10px 10px rgba(0, 0, 0, 0.381);
+  box-shadow: var(--main-shadow);
 }
 nav {
   background-color: var(--dark-orange);
@@ -167,4 +169,43 @@ textPath {
   .hidden--mobile {
     display: none;
   }
+}
+
+#mainForm {
+  margin-top: 50px;
+}
+
+/* Recipe Form Section */
+#recipeFormWrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 0 50px 0 50px;
+  border: var(--main-border);
+  border-radius: 30px;
+  box-shadow: var(--main-shadow);
+}
+.formTop {
+  display: flex;
+  flex-direction: row;
+  background-color: var(--dark-purple);
+  padding: 18px;
+  border-top-left-radius: 28px;
+  border-top-right-radius: 28px;
+  border-bottom: var(--main-border);
+}
+.circle {
+    border: var(--main-border);
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 10px;
+    background-color: var(--dark-orange);
+}
+#recipeForm {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background-color: var(--light-purple);
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
 }

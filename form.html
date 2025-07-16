@@ -33,10 +33,10 @@
                         <img id="eyeLeft" class="eye" src="eye.png" />
                     </div>
                 </div> -->
-                <div class="mainWindowText">
+                <div class="mainWindowText" id="mainForm">
                     <svg viewBox="0 100 500 80">
                         <path id="curve" d="M50,150 L450,150" />
-                        <text class="creepster-regular">
+                        <text>
                             <textPath href="#curve" startOffset="50%" text-anchor="middle">
                                 Submit Recipe
                             </textPath>
@@ -44,20 +44,35 @@
                     </svg>
                 </div>
             </div>
-            <form>
-                <label for="Recipe Title">Recipe Title:</label>
-                <input type="text" id="recipeName" name="recipeName">
-                <fieldset>
-                    <legend>Recipe Category:</legend>
-                    <input type="radio" id="desert" name="category" value="desert">
-                    <label for="desert">Desert</label><br>
-                    <input type="radio" id="drink" name="category" value="drink">
-                    <label for="drink">Drink</label><br>
-                    <input type="radio" id="appetizer" name="category" value="appetizer">
-                    <label for="appetizer">Appetizer</label><br>
-
-                </fieldset>
-            </form>
+            <div id="recipeFormWrapper">
+                <div class="formTop">
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                </div>
+                <form id="recipeForm">
+                    <label for="recipeName">Recipe Title:</label>
+                    <input type="text" id="recipeName" name="recipeName">
+                    <fieldset>
+                        <legend>Recipe Category:</legend>
+                        <input type="radio" id="desert" name="category" value="desert">
+                        <label for="desert">Desert</label><br>
+                        <input type="radio" id="drink" name="category" value="drink">
+                        <label for="drink">Drink</label><br>
+                        <input type="radio" id="appetizer" name="category" value="appetizer">
+                        <label for="appetizer">Appetizer</label><br>
+                    </fieldset>
+                    <label for="description">Description:</label>
+                    <input type="text" id="description" name="description">
+                    <label for="ingredients">Ingredients:</label>
+                    <input type="text" id="ingredients" name="ingredients">
+                    <label for="instructions">Instructions:</label>
+                    <input type="text" id="instructions" name="instructions">
+                    <label for="recipeOwner">Your Name:</label>
+                    <input type="text" id="recipeOwner" name="recipeOwner">
+                    <button type="submit" form="recipeForm" value="submit">Submit</button>
+                </form>
+            </div>
             <!-- <div class="tabs"></div> -->
         </div>
     </main>
