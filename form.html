@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 
-<body id="index">
+<body>
     <main>
         <div class="mainWindow">
             <div>
@@ -26,29 +26,41 @@
             </div>
             <div class="topHalf">
 
-                <div class="character-wrapper">
+                <!-- <div class="character-wrapper">
                     <div class="character">
                         <img id="girl" src="girl.png" />
                         <img id="eyeRight" class="eye" src="eye.png" />
                         <img id="eyeLeft" class="eye" src="eye.png" />
                     </div>
-                </div>
+                </div> -->
                 <div class="mainWindowText">
                     <svg viewBox="0 100 500 80">
                         <path id="curve" d="M50,150 L450,150" />
                         <text class="creepster-regular">
                             <textPath href="#curve" startOffset="50%" text-anchor="middle">
-                                Happy Halloween
+                                Submit Recipe
                             </textPath>
                         </text>
                     </svg>
                 </div>
             </div>
-            <div class="tabs"></div>
-            <div id="latestRecipes"></div>
+            <form>
+                <label for="Recipe Title">Recipe Title:</label>
+                <input type="text" id="recipeName" name="recipeName">
+                <fieldset>
+                    <legend>Recipe Category:</legend>
+                    <input type="radio" id="desert" name="category" value="desert">
+                    <label for="desert">Desert</label><br>
+                    <input type="radio" id="drink" name="category" value="drink">
+                    <label for="drink">Drink</label><br>
+                    <input type="radio" id="appetizer" name="category" value="appetizer">
+                    <label for="appetizer">Appetizer</label><br>
+
+                </fieldset>
+            </form>
+            <!-- <div class="tabs"></div> -->
         </div>
     </main>
-    <script src="index.js"></script>
 </body>
 
 </html>
