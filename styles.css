@@ -241,3 +241,10 @@ label,
 legend {
   font-weight: 600;
 }
+
+.wandButton {
+  cursor: url('wand.svg') 0 0, auto;
+}
+.wandButton:active {
+    cursor: url('wandClicked.svg') 0 0, auto;
+}
