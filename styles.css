@@ -66,7 +66,16 @@ nav li {
   width: 100%;
   aspect-ratio: 4.81 / 1;
   background-position: bottom center;
-
+}
+.cloudBackgroundTwo{
+  background-image: url(./assets/waveBackground.svg);
+  background-color: var(--white);
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 180px;
+  width: 100%;
+  aspect-ratio: 4.81 / 1;
+  background-position: bottom center;
 }
 div .cloudBackground {
   display: flex;
@@ -105,15 +114,39 @@ div .cloudBackground {
   background-color: white;
   text-align: center;
 }
-.tabs {
-  display: flex;
+.countdownContainer{
+  /* display: flex;
   flex-direction: row;
-  background-color: var(--dark-black);
+
   width: 80%;
   height: 60px;
   place-items: center;
   margin: 0 auto;
+  border-radius: 30px; */
+
+    display: flex;
+  flex-direction: column;
+  margin: 0 250px;
+  border: var(--form-border);
   border-radius: 30px;
+  box-shadow: var(--main-shadow);
+  z-index: 1;
+}
+.countdownTop {
+  display: flex;
+  flex-direction: row;
+  background-color: var(--dark-orange);
+  border-top-left-radius: 28px;
+  border-top-right-radius: 28px;
+  border-bottom: var(--form-border);
+  justify-content: center;
+  align-items: center;
+}
+#countdownText {
+  color: var(--white);
+  padding: 0 30px;
+  font-weight: 600;
+  font-size: 25px;
 }
 .topHalf {
   background-image: url("cloudBackground.png");
