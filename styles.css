@@ -58,7 +58,53 @@ nav li {
 
   font-weight: 400;
 }
+.cloudBackground{
+  background-image: url(./assets/cloudBackground.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 180px;
+  width: 100%;
+  aspect-ratio: 4.81 / 1;
+  background-position: bottom center;
 
+}
+div .cloudBackground {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* background-color: red; */
+  margin: 0 auto;
+  width: 100%;
+}
+.introText {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 20px;
+  text-align: center;
+  z-index: 1;
+  background-color: white;
+  margin-top: 0;
+}
+.cloudText{
+  margin-top: -40px
+}
+.introText h2 {
+  margin: -10px 30px;
+  line-height: 30px;
+  font-weight: 600;
+  font-size: 2.5rem;
+}
+.introText h3 {
+  margin: 30px 30px;
+  line-height: 30px;
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+.recipes {
+  background-color: white;
+  text-align: center;
+}
 .tabs {
   display: flex;
   flex-direction: row;
@@ -105,6 +151,10 @@ nav li {
   flex-direction: column;
   border-bottom-left-radius: 30px;
   border-bottom-right-radius: 30px;
+}
+.mainWindowText svg {
+  display: block;
+  margin: 0 auto;
 }
 .mainWindowText {
   text-align: center;
@@ -243,8 +293,8 @@ legend {
 }
 
 .wandButton {
-  cursor: url('wand.svg') 0 0, auto;
+  cursor: url("wand.svg") 0 0, auto;
 }
 .wandButton:active {
-    cursor: url('wandClicked.svg') 0 0, auto;
+  cursor: url("wandClicked.svg") 0 0, auto;
 }

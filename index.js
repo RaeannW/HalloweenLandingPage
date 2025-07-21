@@ -38,6 +38,6 @@ function angle(cx, cy, ex, ey) {
 }
 
 // add and delete recipes
-const practice = document.getElementById('latestRecipes');
-practice.append("Latest Recipes");
+// const practice = document.getElementById('latestRecipes');
+// practice.append("Latest Recipes");
 
