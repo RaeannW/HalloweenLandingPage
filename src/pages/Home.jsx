@@ -12,7 +12,7 @@ export default function Home() {
             <EyeFollow />
           </div>
           <div>
-            <AnimatedText />
+            <AnimatedText>Halloween Recipes</AnimatedText>
             <div className="cloudBackground"></div>
             <div className="introText">
               <div className="cloudText">

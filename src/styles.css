@@ -328,9 +328,25 @@ legend {
   font-weight: 600;
 }
 
-.wandButton {
+/* Buttons */
+.wandButton, .orangeButton {
   cursor: url("./assets/wand.svg") 0 0, auto;
 }
-.wandButton:active {
+.wandButton:active, .orangeButton:active {
   cursor: url("./assets/wandClicked.svg") 0 0, auto;
+}
+.orangeButton {
+  color: var(--dark-black);
+  background-color: var(--dark-orange);
+  border: var(--form-border);
+  border-radius: 30px;
+  padding: 1em;
+  margin: 0 auto;
+  width: 15rem;
+  display: block;
+  font-weight: 600;
+}
+
+.orangeButton:hover {
+    background-color: var(--dark-purple);
 }

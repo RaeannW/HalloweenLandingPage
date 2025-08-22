@@ -13,7 +13,7 @@ export default function RecipeForm() {
 
   return (
     <>
-      {!isFormOpen && <button onClick={handleOpen}>Submit Recipe</button>}
+      {!isFormOpen && <button className="orangeButton" onClick={handleOpen}>Submit Recipe</button>}
 
       {isFormOpen && (
         <div id="recipeFormWrapper">
