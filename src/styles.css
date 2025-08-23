@@ -59,7 +59,7 @@ nav li {
   font-weight: 400;
 }
 .cloudBackground {
-  background-image: url(./assets/cloudBackground.svg);
+  background-image: url(assets/cloudBackground.svg);
   background-size: contain;
   background-repeat: no-repeat;
   height: 180px;
@@ -68,7 +68,7 @@ nav li {
   background-position: bottom center;
 }
 .cloudBackgroundTwo {
-  background-image: url(./assets/waveBackground.svg);
+  background-image: url(assets/waveBackground.svg);
   background-color: var(--white);
   background-size: contain;
   background-repeat: no-repeat;
@@ -149,7 +149,7 @@ div .cloudBackground {
   font-size: 25px;
 }
 .topHalf {
-  background-image: url("./assets/cloudBackground.png");
+  background-image: url("assets/cloudBackground.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: top center;
@@ -171,7 +171,7 @@ div .cloudBackground {
   z-index: 1;
 }
 .bottomHalf {
-  background-image: url("./assets/backgroundTwo.png");
+  background-image: url("assets/backgroundTwo.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center bottom;
@@ -330,10 +330,10 @@ legend {
 
 /* Buttons */
 .wandButton, .orangeButton {
-  cursor: url("./assets/wand.svg") 0 0, auto;
+  cursor: url("assets/wand.svg") 0 0, auto;
 }
 .wandButton:active, .orangeButton:active {
-  cursor: url("./assets/wandClicked.svg") 0 0, auto;
+  cursor: url("assets/wandClicked.svg") 0 0, auto;
 }
 .orangeButton {
   color: var(--dark-black);

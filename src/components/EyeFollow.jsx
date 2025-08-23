@@ -1,3 +1,5 @@
+import girl from "../assets/girl.png"
+import eye from "../assets/eye.png"
 import { useEffect, useRef } from "react";
 
 export default function EyeFollow() {
@@ -41,9 +43,9 @@ export default function EyeFollow() {
   return (
       <div className="character-wrapper">
         <div className="character">
-          <img id="girl" ref={girlRef} src="assets/girl.png" />
-          <img id="eyeRight" ref={eyeLeftRef} className="eye" src="assets/eye.png" />
-          <img id="eyeLeft" ref={eyeRightRef} className="eye" src="assets/eye.png" />
+          <img id="girl" ref={girlRef} src={girl} />
+          <img id="eyeRight" ref={eyeLeftRef} className="eye" src={eye} />
+          <img id="eyeLeft" ref={eyeRightRef} className="eye" src={eye} />
         </div>
       </div>
   );

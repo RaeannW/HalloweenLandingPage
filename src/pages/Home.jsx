@@ -2,6 +2,7 @@ import { collection, query, orderBy, limit, getDocs } from "firebase/firestore";
 import AnimatedText from "../components/AnimatedText";
 import EyeFollow from "../components/EyeFollow";
 import Nav from "../components/Nav";
+import RecipeCard from "../components/RecipeCard";
 import { db } from "../firebase.config";
 import { useState, useEffect } from "react";
 
@@ -48,15 +49,23 @@ export default function Home() {
             </div>
             <div className="recipes" id="latestRecipes">
               <h2>Latest Recipes</h2>
-              {recipes.map(recipe => (
+              {/* {recipes.map(recipe => (
                 <li key={recipe.id}>{recipe.Title} - {recipe.Description} by: {recipe.Name}</li>
-              ))}
-              {/* <p>One</p>
-              <p>Two</p>
-              <p>Three</p>
-              <p>Four</p>
-              <p>Five</p>
-              <p>Six</p> */}
+              ))} */}
+              <div className="recipeList">
+                {recipes.map (recipe => (
+                  <RecipeCard
+                    key={recipe.id}
+                    title={recipe.Title}
+                    category={recipe.Category}
+                    description={recipe.Description}
+                    ingredients={recipe.Ingredients}
+                    steps={recipe.Steps}
+                    name={recipe.Name}
+                    createdAt={recipe.createdAt}      
+                  />
+                ))}
+              </div>
             </div>
             <div className="cloudBackgroundTwo"></div>
             <div className="bottomHalf"></div>

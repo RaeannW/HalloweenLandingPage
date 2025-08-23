@@ -66,35 +66,97 @@ export default function RecipeForm() {
           </div>
           <form id="recipeForm" onSubmit={handleSubmit}>
             <label htmlFor="Title">Recipe Title:</label>
-            <input type="text" id="title" name="Title" onChange={handleChange} value={form.Title}/>
+            <input
+              type="text"
+              id="title"
+              name="Title"
+              onChange={handleChange}
+              value={form.Title}
+            />
 
             <fieldset>
               <legend>Recipe Category:</legend>
 
-              <input type="radio" id="desert" name="Category" value="desert" checked={form.Category === "desert"} onChange={(e) => setForm({ ...form, Category: e.target.value })} />
-              <label htmlFor="desert">Desert</label>
+              <input
+                type="radio"
+                id="Desert"
+                name="Category"
+                value="Desert"
+                checked={form.Category === "Desert"}
+                onChange={(e) => setForm({ ...form, Category: e.target.value })}
+              />
+              <label htmlFor="Desert">Desert</label>
               <br />
 
-              <input type="radio" id="drink" name="Category" value="drink" checked={form.Category === "drink"} onChange={(e) => setForm({ ...form, Category: e.target.value })}/>
-              <label htmlFor="drink">Drink</label>
+              <input
+                type="radio"
+                id="Drink"
+                name="Category"
+                value="Drink"
+                checked={form.Category === "Drink"}
+                onChange={(e) => setForm({ ...form, Category: e.target.value })}
+              />
+              <label htmlFor="Drink">Drink</label>
               <br />
 
-              <input type="radio" id="appetizer" name="Category" value="appetizer" checked={form.Category === "appetizer"} onChange={(e) => setForm({ ...form, Category: e.target.value })} />
-              <label htmlFor="appetizer">Appetizer</label>
+              <input
+                type="radio"
+                id="Appetizer"
+                name="Category"
+                value="Appetizer"
+                checked={form.Category === "Appetizer"}
+                onChange={(e) => setForm({ ...form, Category: e.target.value })}
+              />
+              <label htmlFor="Appetizer">Appetizer</label>
+              <br />
+
+              <input
+                type="radio"
+                id="Meal"
+                name="Category"
+                value="Meal"
+                checked={form.Category === "Meal"}
+                onChange={(e) => setForm({ ...form, Category: e.target.value })}
+              />
+              <label htmlFor="Meal">Meal</label>
               <br />
             </fieldset>
 
             <label htmlFor="Description">Description:</label>
-            <textarea id="description" name="Description" rows="4" onChange={handleChange} value={form.Description}></textarea>
+            <textarea
+              id="description"
+              name="Description"
+              rows="4"
+              onChange={handleChange}
+              value={form.Description}
+            ></textarea>
 
             <label htmlFor="Ingredients">Ingredients:</label>
-            <textarea id="ingredients" name="Ingredients" rows="4" onChange={handleChange} value={form.Ingredients}></textarea>
+            <textarea
+              id="ingredients"
+              name="Ingredients"
+              rows="4"
+              onChange={handleChange}
+              value={form.Ingredients}
+            ></textarea>
 
             <label htmlFor="Steps">Steps:</label>
-            <textarea id="steps" name="Steps" rows="8" onChange={handleChange} value={form.Steps}></textarea>
+            <textarea
+              id="steps"
+              name="Steps"
+              rows="8"
+              onChange={handleChange}
+              value={form.Steps}
+            ></textarea>
 
             <label htmlFor="Name">Your Name:</label>
-            <input type="text" id="name" name="Name" onChange={handleChange} value={form.Name}/>
+            <input
+              type="text"
+              id="name"
+              name="Name"
+              onChange={handleChange}
+              value={form.Name}
+            />
 
             <button
               className="wandButton"
