@@ -3,7 +3,7 @@ import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { db } from "../firebase.config.js";
 
 export default function RecipeForm() {
-  const [isFormOpen, setIsFormOpen] = useState(false);
+  const [isFormOpen, setIsFormOpen] = useState();
 
   const handleOpen = () => {
     setIsFormOpen(true);
@@ -17,10 +17,44 @@ export default function RecipeForm() {
     Title: "",
     Category: "",
     Description: "",
-    Ingredients: [],
-    Steps: [],
+    Ingredients: [""],
+    Steps: [""],
     Name: "",
   });
+
+  const handleIngredientChange = (index, value) => {
+    const newIngredients = [...form.Ingredients];
+    newIngredients[index] = value;
+
+    setForm({
+      ...form,
+      Ingredients: newIngredients,
+    });
+  };
+
+  const addIngredient = () => {
+    setForm({
+      ...form,
+      Ingredients: [...form.Ingredients, ""],
+    });
+  };
+
+  const handleStepsChange = (index, value) => {
+    const newSteps = [...form.Steps];
+    newSteps[index] = value;
+
+    setForm({
+      ...form,
+      Steps: newSteps,
+    });
+  };
+
+  const addStep = () => {
+    setForm({
+      ...form,
+      Steps: [...form.Steps, ""],
+    });
+  };
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -28,6 +62,10 @@ export default function RecipeForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const cleanedIngredients = form.Ingredients.filter(
+      (ing) => ing.trim() !== ""
+    );
+    const cleanedSteps = form.Steps.filter((step) => step.trim() !== "");
     await addDoc(collection(db, "recipes"), {
       ...form,
       createdAt: serverTimestamp(),
@@ -36,8 +74,8 @@ export default function RecipeForm() {
       Title: "",
       Category: "",
       Description: "",
-      Ingredients: [],
-      Steps: [],
+      Ingredients: [""],
+      Steps: [""],
       Name: "",
     });
   };
@@ -132,22 +170,38 @@ export default function RecipeForm() {
             ></textarea>
 
             <label htmlFor="Ingredients">Ingredients:</label>
-            <textarea
-              id="ingredients"
-              name="Ingredients"
-              rows="4"
-              onChange={handleChange}
-              value={form.Ingredients}
-            ></textarea>
+            {form.Ingredients.map((ingredient, index) => (
+              <input
+                type="text"
+                key={index}
+                id="ingredients"
+                name="Ingredients"
+                value={ingredient}
+                onChange={(e) => handleIngredientChange(index, e.target.value)}
+                required={index === 0}
+                placeholder={`Ingredient ${index + 1}`}
+              ></input>
+            ))}
+            <button type="button" onClick={addIngredient}>
+              Add Ingredient
+            </button>
 
             <label htmlFor="Steps">Steps:</label>
-            <textarea
-              id="steps"
-              name="Steps"
-              rows="8"
-              onChange={handleChange}
-              value={form.Steps}
-            ></textarea>
+            {form.Steps.map((step, index) => (
+              <input
+                type="text"
+                key={index}
+                id="steps"
+                name="Steps"
+                onChange={(e) => handleStepsChange(index, e.target.value)}
+                value={step}
+                required={index === 0}
+                placeholder={`Step ${index + 1}`}
+              ></input>
+            ))}
+            <button type="button" onClick={addStep}>
+              Add Step
+            </button>
 
             <label htmlFor="Name">Your Name:</label>
             <input

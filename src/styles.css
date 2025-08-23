@@ -346,7 +346,13 @@ legend {
   display: block;
   font-weight: 600;
 }
-
 .orangeButton:hover {
     background-color: var(--dark-purple);
+}
+
+/* Recipe Cards */
+.cardIngredients, .cardSteps {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }

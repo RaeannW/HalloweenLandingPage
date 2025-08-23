@@ -26,12 +26,31 @@ export default function RecipeCard({
 
   return (
     <div className="recipeCard">
-              <h3 className="cardTitle">{title}</h3>
+      <h3 className="cardTitle">{title}</h3>
       {categoryImages[category] || null}
       <span className="cardCategory">{category}</span>
       <p className="cardDescription">{description}</p>
-      <p className="cardIngredients">{ingredients}</p>
-      <p className="cardSteps">{steps}</p>
+
+      {Array.isArray(ingredients) ? (
+        <ul className="cardIngredients">
+          {ingredients.map((ing, index) => (
+            <li key={index}>{ing}</li>
+          ))}
+        </ul>
+      ) : (
+        <p className="cardIngredients">{ingredients}</p>
+      )}
+
+      {Array.isArray(steps) ? (
+        <ul className="cardSteps">
+          {steps.map((step, index) => (
+            <li key={index}>{step}</li>
+          ))}
+        </ul>
+      ) : (
+        <p className="cardSteps">{steps}</p>
+      )}
+
       <span className="cardAuthor">By: {name}</span>
       <span className="createdAt"> {formattedDate}</span>
     </div>
