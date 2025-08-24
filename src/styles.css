@@ -298,7 +298,8 @@ textPath {
   border-top-right-radius: 28px;
   border-bottom: var(--form-border);
 }
-.formColOne, .formColTwo {
+.formColOne,
+.formColTwo {
   display: flex;
 }
 .circle {
@@ -329,10 +330,12 @@ legend {
 }
 
 /* Buttons */
-.wandButton, .orangeButton {
+.wandButton,
+.orangeButton {
   cursor: url("assets/wand.svg") 0 0, auto;
 }
-.wandButton:active, .orangeButton:active {
+.wandButton:active,
+.orangeButton:active {
   cursor: url("assets/wandClicked.svg") 0 0, auto;
 }
 .orangeButton {
@@ -347,12 +350,29 @@ legend {
   font-weight: 600;
 }
 .orangeButton:hover {
-    background-color: var(--dark-purple);
+  background-color: var(--dark-purple);
 }
 
 /* Recipe Cards */
-.cardIngredients, .cardSteps {
+.cardIngredients,
+.cardSteps {
   list-style: none;
   padding: 0;
   margin: 0;
+}
+.recipeList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  /* background-color: red; */
+  justify-content: center;
+}
+.recipeCard {
+  background-color: pink;
+  flex: 1 1 45%;
+  max-width: 400px;
+  background-color: var(--white);
+  border-radius: 30px;
+  border: var(--main-border);
+  box-shadow: var(--main-shadow); 
 }
