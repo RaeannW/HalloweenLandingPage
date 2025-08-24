@@ -46,9 +46,9 @@ export default function Home() {
                 <h2>Celebrate Spooky Season</h2>
                 <h3> With Some of the Best Halloween Recipes</h3>
               </div>
-            </div>
-            <div className="recipes" id="latestRecipes">
-              <h2>Latest Recipes</h2>
+            
+            <div className="recipes">
+              <h3 id="latestRecipes">Latest Recipes</h3>
               {/* {recipes.map(recipe => (
                 <li key={recipe.id}>{recipe.Title} - {recipe.Description} by: {recipe.Name}</li>
               ))} */}
@@ -66,6 +66,7 @@ export default function Home() {
                   />
                 ))}
               </div>
+            </div>
             </div>
             <div className="cloudBackgroundTwo"></div>
             <div className="bottomHalf"></div>

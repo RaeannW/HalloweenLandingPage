@@ -9,6 +9,7 @@
   --light-orange: #ffc999;
   --light-purple: #ede0f7;
   --pale-orange: #fff0dc;
+  --pale-purple: #f5eefa;
   --white: #ffffff;
 
   --main-border: solid var(--dark-black) 3.5px;
@@ -374,5 +375,28 @@ legend {
   background-color: var(--white);
   border-radius: 30px;
   border: var(--main-border);
-  box-shadow: var(--main-shadow); 
+  box-shadow: var(--main-shadow);
+}
+.recipeCardTop {
+  background-color: var(--pale-purple);
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 1rem 0.5rem;
+}
+.cardCategoryImage {
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+.cardCategoryImage > img {
+  width: 5rem;
+}
+.cardHeaderInfo {
+  flex: 3;
+  text-align: left;
+  line-height: 0.4;
 }
