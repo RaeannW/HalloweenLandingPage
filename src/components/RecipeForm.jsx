@@ -182,7 +182,7 @@ export default function RecipeForm() {
                 placeholder={`Ingredient ${index + 1}`}
               ></input>
             ))}
-            <button type="button" onClick={addIngredient}>
+            <button type="button" className="orangeButton formButton" onClick={addIngredient}>
               Add Ingredient
             </button>
 
@@ -199,7 +199,7 @@ export default function RecipeForm() {
                 placeholder={`Step ${index + 1}`}
               ></input>
             ))}
-            <button type="button" onClick={addStep}>
+            <button type="button" className="orangeButton formButton" onClick={addStep}>
               Add Step
             </button>
 
@@ -213,7 +213,7 @@ export default function RecipeForm() {
             />
 
             <button
-              className="wandButton"
+              className="orangeButton" 
               type="submit"
               form="recipeForm"
               value="submit"

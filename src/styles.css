@@ -353,6 +353,9 @@ legend {
 .orangeButton:hover {
   background-color: var(--dark-purple);
 }
+.formButton {
+  margin-left: 0;
+}
 
 /* Recipe Cards */
 .cardIngredients,
