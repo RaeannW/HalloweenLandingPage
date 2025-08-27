@@ -368,17 +368,39 @@ legend {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-  /* background-color: red; */
   justify-content: center;
 }
-.recipeCard {
-  background-color: pink;
+.recipeCardContainer {
   flex: 1 1 45%;
   max-width: 400px;
   background-color: var(--white);
   border-radius: 30px;
-  border: var(--main-border);
+  justify-content: center;
+  align-items: stretch;
+  display: flex;
+  flex-direction: column;
   box-shadow: var(--main-shadow);
+}
+.recipeCardTab {
+  background-color: var(--dark-orange);
+  color: var(--white);
+  font-weight: 600;
+  width: 50%;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+  z-index: 0;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+}
+.recipeCard {
+  flex: 1 1 45%;
+  background-color: var(--white);
+  border-radius: 30px;
+  border: var(--main-border);
+  z-index: 1;
+  margin-top: -30px;
 }
 .recipeCardTop {
   background-color: var(--pale-purple);
@@ -402,4 +424,7 @@ legend {
   flex: 3;
   text-align: left;
   line-height: 0.4;
+}
+.titleDate {
+  font-size: small;
 }

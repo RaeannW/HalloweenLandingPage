@@ -25,41 +25,50 @@ export default function RecipeCard({
   };
 
   return (
-    <div className="recipeCard">
-      <div className="recipeCardTop">
-        <div className="cardCategoryImage">
-        {categoryImages[category] || null}
-        </div>
-        <div className="cardHeaderInfo">
-        <h4 className="cardTitle">Recipe: {title}</h4>
-        <p>Submitted By: {name}{formattedDate}</p>
-        </div>
+    <div className="recipeCardContainer">
+      <div className="recipeCardTab">
+        <span className="cardCategory">{category}</span>
       </div>
-
-      {/* <span className="cardCategory">{category}</span> */}
-      <p className="cardDescription">{description}</p>
-
-      {Array.isArray(ingredients) ? (
-        <ul className="cardIngredients">
-          {ingredients.map((ing, index) => (
-            <li key={index}>{ing}</li>
-          ))}
-        </ul>
-      ) : (
-        <p className="cardIngredients">{ingredients}</p>
-      )}
-
-      {Array.isArray(steps) ? (
-        <ul className="cardSteps">
-          {steps.map((step, index) => (
-            <li key={index}>{step}</li>
-          ))}
-        </ul>
-      ) : (
-        <p className="cardSteps">{steps}</p>
-      )}
-
-
+      <div className="recipeCard">
+        <div className="recipeCardTop">
+          <div className="cardCategoryImage">
+            {categoryImages[category] || null}
+          </div>
+          <div className="cardHeaderInfo">
+            <h4 className="cardTitle">Recipe: {title}</h4>
+            <p className="titleDate">
+              Submitted By: {name}
+              {formattedDate}
+            </p>
+          </div>
+        </div>
+        <p className="cardDescription">Description: {description}</p>
+        <p>
+          Ingredients:
+          {Array.isArray(ingredients) ? (
+            <ul className="cardIngredients">
+              {ingredients.map((ing, index) => (
+                <li key={index}>{ing}</li>
+              ))}
+            </ul>
+          ) : (
+            <p className="cardIngredients">{ingredients}</p>
+          )}
+        </p>
+        <p>
+          Steps:
+          {Array.isArray(steps) ? (
+            <ul className="cardSteps">
+              Ingredients:
+              {steps.map((step, index) => (
+                <li key={index}>{step}</li>
+              ))}
+            </ul>
+          ) : (
+            <p className="cardSteps">{steps}</p>
+          )}
+        </p>
+      </div>
     </div>
   );
 }
