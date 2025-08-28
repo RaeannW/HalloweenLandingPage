@@ -1,34 +1,11 @@
-import { collection, query, orderBy, limit, getDocs } from "firebase/firestore";
 import AnimatedText from "../components/AnimatedText";
 import EyeFollow from "../components/EyeFollow";
 import Nav from "../components/Nav";
 import RecipeCard from "../components/RecipeCard";
-import { db } from "../firebase.config";
-import { useState, useEffect } from "react";
+import useRecipes from "../hooks/useRecipes";
 
 export default function Home() {
-  const [recipes, setRecipes] = useState([]);
-
-  useEffect(() => {
-    const fetchLatestRecipes = async () => {
-      const q = query(
-        collection(db, "recipes"),
-        // orderBy("createdAt"),
-        limit(5)
-      );
-
-      const querySnapShot = await getDocs(q);
-      const recipeList = querySnapShot.docs.map(doc => ({
-        id: doc.id,
-        ...doc.data()
-      }));
-      setRecipes(recipeList);
-    };
-
-    fetchLatestRecipes();
-  }, [])
-  
-
+  const recipes = useRecipes(5);
 
   return (
     <>

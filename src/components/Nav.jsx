@@ -7,7 +7,7 @@ export default function Nav() {
       <ul className="hidden--mobile nav-links">
         <li><Link to="/">Home</Link></li>
         <li><Link to="/submitRecipe">Submit</Link></li>
-        <li>Categories</li>
+        <li><Link to="/categories">Categories</Link></li>
         <li>Contact</li>
       </ul>
     </nav>
