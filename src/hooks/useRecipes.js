@@ -1,17 +1,22 @@
 import { useEffect, useState } from "react";
-import { collection, query, getDocs, limit } from "firebase/firestore";
+import { collection, query, getDocs, limit, where } from "firebase/firestore";
 import { db } from "../firebase.config.js";
 
-export default function useRecipes(limitCount) {
+export default function useRecipes({ category = null, limitCount = null} = {}) {
   const [recipes, setRecipes] = useState([]);
 
   useEffect(() => {
     const fetchRecipes = async () => {
         let q = collection(db, "recipes");
 
+        if(category){
+          q = query(q, where("Category", "==", category));
+        }
+
         if (limitCount) {
             q = query(q, limit(limitCount))
         }
+
         const snapshot = await getDocs(q);
         const recipeList = snapshot.docs.map(doc => ({
             id: doc.id,
@@ -22,7 +27,7 @@ export default function useRecipes(limitCount) {
 
     fetchRecipes();
 
-  },[limitCount])
+  },[category, limitCount])
 
   return recipes;
 }
